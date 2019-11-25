@@ -1,0 +1,55 @@
+*
+	{
+		margin: 0;
+		padding: 0;
+	}
+
+	
+html
+	{
+		background-color: #ffffff;
+		font-size:1em;
+		font-family: raleway, sans-serif;
+	}
+
+section
+	{
+		border: 1px solid #e7e7e7;
+		border-top: 3px solid #e7e7e7;
+		color: #4A404B;
+		background: white;
+		width: 70vw;
+		padding: 2%;
+		border-radius: 10px;
+		margin: 50px auto;
+		text-align: center;
+	}
+
+input
+	{	font-family: raleway, sans-serif;
+		width: 70%;
+		padding: 1%;
+		margin: 5px auto;
+	}
+
+button
+	{	
+		font-family: raleway, sans-serif;
+		font-weight: 900;
+		width: 40%;
+		padding: 1%;
+		margin: auto;
+		background-color: #ffffff;
+		border-style: none;
+		border: 2px solid #d4d4d4;
+		color: #4A404B;
+	}
+@media only screen and (min-device-width:768px) and (max-device-width:1024px) and (orientation: portrait)
+{
+	
+}
+
+@media only screen and (min-width:1224px)
+{
+
+}
