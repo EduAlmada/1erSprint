@@ -1,0 +1,28 @@
+ body{
+     background-color: #911aa6;
+ }
+ form{
+    text-align: center;
+    border:black 2px solid;
+    
+}
+
+h1{
+    text-align: center;
+    text-decoration: underline;
+    opacity: 0.95; ;
+    
+}
+
+   label{
+font-family: Georgia, 'Times New Roman', Times, serif;
+   }
+img{
+   display: block;
+   margin: auto;
+   border: black 2px solid;
+
+}
+
+
+
