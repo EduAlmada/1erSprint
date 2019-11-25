@@ -4,7 +4,7 @@
 	<title>REGISTRO</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="diseño.css">
+	<link rel="stylesheet" type="text/css" href="css/diseño.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Raleway">
@@ -26,35 +26,35 @@
 					<!-- links de la izquierda -->
 					<ul class="navbar-nav mr-auto"> 
 						<li class="nav-item active">
-							<a class="nav-link" href="#">Home
+							<a class="nav-link" href="Index.html">Home
 							<span class="sr-only">(current)</span>
 							</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="" target="_blank">Sobre Nosotros</a>
+							<a class="nav-link" href="Index.html" target="_self">Sobre Nosotros</a>
 						</li>
 						<li class="nav-item">
-								<a class="nav-link" href="" target="_blank">Locales</a>
+								<a class="nav-link" href="perfil de usurio/perfil.html" target="_self">Locales</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="faq.html" target="_blank">Preguntas frecuentes</a>
+							<a class="nav-link" href="faq.html" target="_self">Preguntas frecuentes</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="" target="_blank">Registrarse</a>
+							<a class="nav-link" href="registro.html" target="_self">Registrarse</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="" target="_blank">Inicio</a>
+							<a class="nav-link" href="login.html" target="_self">Login</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="" target="_blank">Contacto</a>
+							<a class="nav-link" href="formularioContacto.html" target="_self">Contacto</a>
 						</li>
 					</ul>
 					<!-- links de la derecha -->
 					<ul class="navbar-nav nav-flex-icons">
 						<li class="nav-item">
-							<a class="nav-link">
-							<span class="badge red z-depth-1 mr-1"> 1 </span>
-							<i class="fas fa-shopping-cart"></i>
+							<a class="nav-link"  href="vistaCarritoCompras.html">
+							<span class="badge red z-depth-1 mr-1">1</span>
+							<i class="fas fa-shopping-cart" ></i>
 							<span class="clearfix d-none d-sm-inline-block"> Carrito </span>
 							</a>
 						</li>
@@ -89,6 +89,8 @@
 		<label>INFORMACIÓN DE INICIO DE SESIÓN</label>	
 		<br>
 		<input type="email" name="email" required placeholder="E-mail">		
+		<br>
+		<br>
 		<input type="password" name="pass" required placeholder="Clave">
 		<br>
 		<br>
@@ -100,19 +102,16 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 	
-	
-
-</body>
-<footer class="page-footer text-center font-small mt-4 bg-dark">
+	<footer class="page-footer text-center font-small mt-4 bg-dark">
 
 		<div class="pt-4">
-			<a class="btn-outline-light pl-3 pr-3" href="#" target="_blank" role="button">Home</a>
-			<a class="btn-outline-light pl-3 pr-3" href="#" target="_blank" role="button">Sobre Nosotros</a>
-			<a class="btn-outline-light pl-3 pr-3" href="#" target="_blank" role="button">Locales</a>
-			<a class="btn-outline-light pl-3 pr-3" href="faq.html" target="_blank" role="button">Preguntas frecuentes</a>
-			<a class="btn-outline-light pl-3 pr-3" href="#" target="_blank" role="button">Registrarse</a>
-			<a class="btn-outline-light pl-3 pr-3" href="#" target="_blank" role="button">Inicio</a>
-			<a class="btn-outline-light pl-3 pr-3" href="#" target="_blank" role="button">Contacto</a>
+			<a class="btn-outline-light pl-3 pr-3" href="Index.html" target="_self" role="button">Home</a>
+			<a class="btn-outline-light pl-3 pr-3" href="Index.html" target="_self" role="button">Sobre Nosotros</a>
+			<a class="btn-outline-light pl-3 pr-3" href="perfil de usurio/perfil.html" target="_self" role="button">Locales</a>
+			<a class="btn-outline-light pl-3 pr-3" href="faq.html" target="_self" role="button">Preguntas frecuentes</a>
+			<a class="btn-outline-light pl-3 pr-3" href="registro.html" target="_self" role="button">Registrarse</a>
+			<a class="btn-outline-light pl-3 pr-3" href="login.html" target="_self" role="button">Login</a>
+			<a class="btn-outline-light pl-3 pr-3" href="formularioContacto.html" target="_self" role="button">Contacto</a>
 		</div>
 	  
 		<div class="p-4">
@@ -130,5 +129,8 @@
 			</a>
 		</div>
 	</footer>
+
+</body>
+
 	
 </html>
