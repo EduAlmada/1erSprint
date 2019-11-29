@@ -7,22 +7,24 @@
 
 	<section>
 	<h1>CREAR CUENTA</h1>
-	<form>		
+	<form action="controladores/validacionRegistro.php" method="POST">		
 		<br>
-		<LABEL>INFORMACIÓN DE USUARIO</LABEL>
+		<label>INFORMACIÓN DE USUARIO</label>
 		<br>
-		<input type="text" name="name" required placeholder="Nombre De Usuario">
-		
+		<input type="text" name="nombre" required placeholder="Nombre De Usuario">
 		<br>
 		<label>INFORMACIÓN DE INICIO DE SESIÓN</label>	
 		<br>
 		<input type="email" name="email" required placeholder="E-mail">		
 		<br>
 		<br>
-		<input type="password" name="pass" required placeholder="Clave">
+		<input type="password" name="password" required placeholder="Contraseña">
 		<br>
 		<br>
-		<button> CREAR</button>		
+		<input type="password" name="confirmar" required placeholder="Repetir contraseña">
+		<br>
+		<br>
+		<button type="submit">CREAR</button>	
 	</form>
 	</section>
 
