@@ -2,7 +2,7 @@
 /* Version 0.3
 Autor: Rodrigo Luque
 Proyecto: Ecommerce
-Fecha: 29/11/2019
+Fecha: 30/11/2019
 */
 
 
@@ -38,79 +38,39 @@ function validarNombre($nombre){ /*Inicio de funcion validarNombre */
       } 
  }
 } /*Fin de funcion validarNombre */
-
 $respuestaValidarNombre=validarNombre($_POST);
 echo $respuestaValidarNombre;
-echo "<br>";
-
-/* ################### 
- Validación de Email 
- - Que no esta vacio
- - Que verifique el formato xxx@xxx.com
- #####################*/
-function validarEmail($email){ /*Inicio de funcion validarEmail */
-      
-    $email = $_POST["email"];
-
-    if($_POST)
-    {
-        if($email===" " || empty($email))
-        { return "El campo esta vacio";
-         }
-          elseif(!(filter_var($email, FILTER_VALIDATE_EMAIL))){
-              echo "EL campo no es un email"; 
-            }
-           else{ 
-               return "El email ingresado es correcto: ".$email; 
-            }
-        }
-} /* Fin de funcion validarEmail */
-
-$respuestaValidarEmail=validarEmail($_POST);
-echo $respuestaValidarEmail;
 echo "<br>";
 
 
 /* ####################### 
 Validación de Password
-- Que no esté vacio el campo password y confirmar
-- Que sean iguales el campo password y confirmar
+- Que no esté vacio el campo passwordr
 - Que el campo password sea mayor a 6
 - Que el campo confirmar sea mayor a 6
 - Que tenga al menos 1 letra minúscula
 - Que tenga al menos 1 letra mayúscula
 - Que tenga al menos un carácter numérico
 ########################## */
+
 function validarPassword($password){ /*Inicio de funcion validarPassword */
     $password=$_POST["password"];
-    $confirmar=$_POST["confirmar"];
 
     if($_POST){
-            if( (strlen($password)==0)  && (strlen($confirmar)==0) ){
-               return "Los dos campos de contraseña estan vacios";
-             }
-             elseif( (strlen($password)==0) ){
+            
+             if( (strlen($password)==0) ){
                return "La contraseña esta vacia";
              }
-             elseif( (strlen($confirmar)==0) ){
-               return "Falta la confirmacion de contraseña";
-             }
-             elseif( ( (strlen($password)>0)  && (strlen($confirmar)>0) ) && ( $password<>$confirmar) )  {
-                return "Las contraseñas no verifican";
-              }
-             elseif(strlen($password)<6){
+           elseif(strlen($password)<6){
                 return "La contraseña debe ser mayor igual 6 carácteres alfanuméricos";
              }
-             elseif(strlen($confirmar)<6){
-                return "La contraseña debe ser mayor igual 6 carácteres alfanuméricos";
-             }
-             elseif( (!preg_match('`[a-z]`',$password)) &&  (!preg_match('`[a-z]`',$confirmar)) ){
+             elseif( (!preg_match('`[a-z]`',$password))  ){
                  return "La contraseña debe tener al menos una letra minúscula";
              }
-             elseif( (!preg_match('`[A-Z]`',$password)) &&  (!preg_match('`[A-Z]`',$confirmar)) ){
+             elseif( (!preg_match('`[A-Z]`',$password))  ){
                 return "La clave debe tener al menos una letra mayúscula";
             }
-            elseif( (!preg_match('`[0-9]`',$password)) && (!preg_match('`[0-9]`',$confirmar)) ){
+            elseif( (!preg_match('`[0-9]`',$password)) ){
                 return "La clave debe tener al menos un caracter numérico";
                
              } 
@@ -123,4 +83,5 @@ function validarPassword($password){ /*Inicio de funcion validarPassword */
     $respuestaValidarPassword=validarPassword($_POST);
     echo $respuestaValidarPassword;
 
-?>
+
+    ?>

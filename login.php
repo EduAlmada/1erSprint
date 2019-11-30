@@ -20,15 +20,19 @@
                 <div class= "col-12 user-img">
                     <img src="img/AVATAR.png">
         </div>
-        <form class="col-12"> <!-- Que utilice todo el espacio disponible -->
+        <!--Fecha:30/11/2019 Agregado por rodrigo: Se agregó el atributo "action" y "method" a la etiqueta "form"  -->
+        <form class="col-12" action="controladores/validacionLogin.php" method="POST"> <!-- Que utilice todo el espacio disponible -->
 
             <div class="form-group" id="user-group"> <!-- Puse el nombre user group para el css -->
 
-                <input type="text" class="form-control" placeholder="Nombre de usuario"/>
+            <!--Fecha:30/11/2019 Agregado por rodrigo: Se agregó el atributo "name" a la etiqueta "input"  -->
+                <input type="text" class="form-control" placeholder="Nombre de usuario" name="nombre" >
             
             </div>
             <div class="form-group" id="contraseña-group">
-                    <input type="password" class="form-control" placeholder="Contraseña"/>
+               
+           <!--Fecha:30/11/2019 Agregado por rodrigo: Se agregó el atributo "name" a la etiqueta "input"  --> 
+                    <input type="password" class="form-control" placeholder="Contraseña" name="password">
 
             </div>
             <button class="btn btn-primary" type="submit">Ingresar</button> <!-- btn=bootstrap -->
