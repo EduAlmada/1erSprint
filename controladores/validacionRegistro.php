@@ -5,9 +5,9 @@ Proyecto: Ecommerce
 Fecha: 29/11/2019
 */
 
-$nombre=$_POST["nombre"];
+
 /* ####################
-  Validación de Nombre
+  Validación de NombreS
   - Que tenga al menos 2 letras
   - Que no tenga espacios
   - Que no este vacio
@@ -15,16 +15,25 @@ $nombre=$_POST["nombre"];
 
 function validarNombre($nombre){ /*Inicio de funcion validarNombre */
     $nombre=$_POST["nombre"];
+
   if($_POST){
-      if(empty($nombre) || $nombre=""){
-          return "Debe escribi algún nombre de usuario";
+
+      if(preg_match("[A-Za-z0-9]",$nombre)){
+        return "Ingrese usuario alfanumerico sin simbolos";
+      }  
+      elseif(trim($nombre,"\0")==' '){
+        return "Nombre de usuario no debe contener espacios";
       }
-      elseif(strlen($nombre)>2) {
-        return "El nombre de usuario debe contener al menos 2 letras";
+      elseif(strlen($nombre)<2){
+       return "El nombre de usuario debe contener al menos 2 letras";
+      }
+      elseif(empty($nombre) || $nombre===" ") {
+        return "Ingrese algún nombre de usuario";
       }
       else{
-          $nombreTrimeado=trim($nombre," ");
-          return "Nombre correcto: "$nombreTrimeado;
+           
+          $nombreTrimeado=trim($nombre);
+          return "Nombre correcto:".$nombreTrimeado;
       } 
  }
 } /*Fin de funcion validarNombre */
@@ -44,7 +53,7 @@ function validarEmail($email){ /*Inicio de funcion validarEmail */
 
     if($_POST)
     {
-        if($email=="" || empty($email))
+        if($email===" " || empty($email))
         { return "El campo esta vacio";
          }
           elseif(!(filter_var($email, FILTER_VALIDATE_EMAIL))){
