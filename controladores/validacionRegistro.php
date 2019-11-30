@@ -18,7 +18,7 @@ function validarNombre($nombre){ /*Inicio de funcion validarNombre */
 
   if($_POST){
 
-      if(preg_match("[A-Za-z0-9]",$nombre)){
+      if(preg_match("[\W]",$nombre)){ //Negación de los alfanúmericos [\W]
         return "Ingrese usuario alfanumerico sin simbolos";
       }  
       elseif(trim($nombre,"\0")==' '){
