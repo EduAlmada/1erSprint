@@ -7,7 +7,7 @@
 
 	<section>
 	<h1>CREAR CUENTA</h1>
-	<form action="controladores/validacionRegistro.php" method="POST">		
+	<form action="controladores/validacionRegistro.php" method="POST" enctype="multipart/form-data">		
 		<br>
 		<label>INFORMACIÓN DE USUARIO</label>
 		<br>
@@ -24,6 +24,9 @@
 		<input type="password" name="confirmar" required placeholder="Repetir contraseña">
 		<br>
 		<br>
+		<label for="file">Upload archivo</label>
+		<input type="file" name="archivo">
+		<p></p>
 		<button type="submit">CREAR</button>	
 	</form>
 	</section>
