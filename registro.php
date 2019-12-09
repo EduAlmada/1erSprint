@@ -3,7 +3,18 @@
 <?php include("head.php") ?>
 <link rel="stylesheet" href="css/registro.css">
 <body>
-<?php include("nav.php") ?>	
+<?php include("nav.php"); 
+
+		if ($_FILES["archivo"]["error"] == UPLOAD_ERR_OK) {
+		$nombre = $_FILES["archivo"]["name"];
+		$archivo2 = $_FILES["archivo"]["tmp_name"];
+		$ext = pathinfo($nombre, PATHINFO_EXTENSION);
+		$miarchivo = dirname(__FILE__);
+		$miarchivo = $miarchivo . "\archivos/" . "Nuevo." . $ext;
+		move_uploaded_file($archivo2, $miarchivo);
+		}
+		
+?>	
 
 	<section>
 	<h1>CREAR CUENTA</h1>
@@ -22,11 +33,12 @@
 		<br>
 		<br>
 		<input type="password" name="confirmar" required placeholder="Repetir contraseña">
+		<div class="">
+			<label for="file"></label>
+			<input type="file" name="archivo">
+		</div>
 		<br>
 		<br>
-		<label for="file">Upload archivo</label>
-		<input type="file" name="archivo">
-		<p></p>
 		<button type="submit">CREAR</button>	
 	</form>
 	</section>
