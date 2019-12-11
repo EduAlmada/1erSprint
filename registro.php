@@ -4,21 +4,20 @@
 <link rel="stylesheet" href="css/registro.css">
 <body>
 <?php include("nav.php"); 
-
+	if (isset($_FILES["archivo"]["name"])) {
 		if ($_FILES["archivo"]["error"] == UPLOAD_ERR_OK) {
 		$nombre = $_FILES["archivo"]["name"];
 		$archivo2 = $_FILES["archivo"]["tmp_name"];
 		$ext = pathinfo($nombre, PATHINFO_EXTENSION);
 		$miarchivo = dirname(__FILE__);
-		$miarchivo = $miarchivo . "\archivos/" . "Nuevo." . $ext;
+		$miarchivo = $miarchivo . "\archivos/" . uniqid() . "." . $ext;
 		move_uploaded_file($archivo2, $miarchivo);
 		}
-		
+	}
 ?>	
-
 	<section>
 	<h1>CREAR CUENTA</h1>
-	<form action="controladores/validacionRegistro.php" method="POST" enctype="multipart/form-data">		
+	<form action="" method="POST" enctype="multipart/form-data">		
 		<br>
 		<label>INFORMACIÓN DE USUARIO</label>
 		<br>
@@ -33,11 +32,11 @@
 		<br>
 		<br>
 		<input type="password" name="confirmar" required placeholder="Repetir contraseña">
-		<div class="">
-			<label for="file"></label>
-			<input type="file" name="archivo">
+		<p></p>
+		<div class="text-center ml-5">
+			<label for="file">Adjunta una imagen o foto para tu cuenta de Usuario</label>
+			<input type="file" name="archivo" id="archivo">
 		</div>
-		<br>
 		<br>
 		<button type="submit">CREAR</button>	
 	</form>
