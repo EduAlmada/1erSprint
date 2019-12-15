@@ -123,4 +123,13 @@ function validarPassword($password){ /*Inicio de funcion validarPassword */
     $respuestaValidarPassword=validarPassword($_POST);
     echo $respuestaValidarPassword;
 
+    function persistirDato($arrayE, $campo) {
+      if( isset($arrayE[$campo]) ) {
+          return "";
+      } else {
+          if(isset($_POST[$campo])) {
+              return $_POST[$campo];
+          }
+      }
+  }
 ?>

@@ -1,3 +1,13 @@
+<?php 
+//$nombreInput=" ";
+//$emailInput=" ";
+require_once 'controladores/validacionRegistro.php';
+$arrayDeErrores = "";
+if($_POST) {
+    $arrayDeErrores = validarRegistracion($_POST);//esta funcion deberia devolver los errores encontrados .
+	
+
+?>
 <!DOCTYPE html>
 <html>
 <?php include("head.php") ?>
@@ -11,11 +21,11 @@
 		<br>
 		<label>INFORMACIÓN DE USUARIO</label>
 		<br>
-		<input type="text" name="nombre" required placeholder="Nombre De Usuario">
+		<input type="text" name="nombre" required placeholder="Nombre De Usuario" value="<?= persistirDato($arrayDeErrores,'nombre');?>">
 		<br>
 		<label>INFORMACIÓN DE INICIO DE SESIÓN</label>	
 		<br>
-		<input type="email" name="email" required placeholder="E-mail">		
+		<input type="email" name="email" required placeholder="E-mail"  value="<?= persistirDato($arrayDeErrores,'email');?>">		
 		<br>
 		<br>
 		<input type="password" name="password" required placeholder="Contraseña">
