@@ -1,54 +1,3 @@
-<<<<<<< HEAD
-<?php 
-//$nombreInput=" ";
-//$emailInput=" ";
-require_once 'controladores/validacionRegistro.php';
-$arrayDeErrores = "";
-if($_POST) {
-    $arrayDeErrores = validarRegistracion($_POST);//esta funcion deberia devolver los errores encontrados .
-	
-
-?>
-<!DOCTYPE html>
-<html>
-<?php include("head.php") ?>
-<link rel="stylesheet" href="css/registro.css">
-<body>
-<?php include("nav.php") ?>	
-
-	<section>
-	<h1>CREAR CUENTA</h1>
-	<form action="controladores/validacionRegistro.php" method="POST">		
-		<br>
-		<label>INFORMACIÓN DE USUARIO</label>
-		<br>
-		<input type="text" name="nombre" required placeholder="Nombre De Usuario" value="<?= persistirDato($arrayDeErrores,'nombre');?>">
-		<br>
-		<label>INFORMACIÓN DE INICIO DE SESIÓN</label>	
-		<br>
-		<input type="email" name="email" required placeholder="E-mail"  value="<?= persistirDato($arrayDeErrores,'email');?>">		
-		<br>
-		<br>
-		<input type="password" name="password" required placeholder="Contraseña">
-		<br>
-		<br>
-		<input type="password" name="confirmar" required placeholder="Repetir contraseña">
-		<br>
-		<br>
-		<button type="submit">CREAR</button>	
-	</form>
-	</section>
-
-	<?php include("footer.php") ?>
-<?php include("scripts.php") ?>
-
-	
-	
-
-</body>
-
-	
-=======
 <!DOCTYPE html>
 <html>
 <?php include("head.php") ?>
@@ -66,17 +15,23 @@ if($_POST) {
 		}
 	}
 ?>	
+<?php require_once 'controladores/validacionRegistro.php';
+$arrayDeErrores = "";
+if($_POST) {
+    $arrayDeErrores = validarRegistracion($_POST);//esta funcion deberia devolver los errores encontrados .
+}
+	?>
 	<section>
 	<h1>CREAR CUENTA</h1>
 	<form action="" method="POST" enctype="multipart/form-data">		
 		<br>
 		<label>INFORMACIÓN DE USUARIO</label>
 		<br>
-		<input type="text" name="nombre" required placeholder="Nombre De Usuario">
+		<input type="text" name="nombre" required placeholder="Nombre De Usuario" value="<?= persistirDato($arrayDeErrores,'nombre');?>">
 		<br>
 		<label>INFORMACIÓN DE INICIO DE SESIÓN</label>	
 		<br>
-		<input type="email" name="email" required placeholder="E-mail">		
+		<input type="email" name="email" required placeholder="E-mail" value="<?= persistirDato($arrayDeErrores,'email');?>">>		
 		<br>
 		<br>
 		<input type="password" name="password" required placeholder="Contraseña">
@@ -102,5 +57,4 @@ if($_POST) {
 </body>
 
 	
->>>>>>> 41c73de866210d82728b181d70d9f96c75245ad4
 </html>
