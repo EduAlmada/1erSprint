@@ -1,26 +1,25 @@
+<?php 
+  require('controladores/validacionRegistro.php');
+  require('controladores/cargarAvatar.php');
+  require('controladores/armarDatosUsuario.php');
+  require('controladores/hashearPassword.php'); 
+  require('controladores/registrarUsuario.php');
+  
+?>
 <!DOCTYPE html>
 <html>
 <?php include("head.php") ?>
 <link rel="stylesheet" href="css/registro.css">
 <body>
-<?php include("nav.php"); 
-	if (isset($_FILES["avatar"]["name"])) {
-		if ($_FILES["avatar"]["error"] == UPLOAD_ERR_OK) {
-		$nombre = $_FILES["avatar"]["name"];
-		$archivo2 = $_FILES["avatar"]["tmp_name"];
-		$ext = pathinfo($nombre, PATHINFO_EXTENSION);
-		$miarchivo = dirname(__FILE__);
-		$miarchivo = $miarchivo . "\archivos/" . uniqid() . "." . $ext;
-		move_uploaded_file($archivo2, $miarchivo);
-		}
-	}
-?>	
-<?php require_once 'controladores/validacionRegistro.php';
+<?php include("nav.php"); ?>	
+<?php 
 $arrayDeErrores = "";
 if($_POST) {
     $arrayDeErrores = validarRegistracion($_POST);//esta funcion deberia devolver los errores encontrados .
 }
 	?>
+
+	<br><br>
 	<section>
 	<h1>CREAR CUENTA</h1>
 	<form action="" method="POST" enctype="multipart/form-data">		
@@ -31,7 +30,7 @@ if($_POST) {
 		<br>
 		<label>INFORMACIÓN DE INICIO DE SESIÓN</label>	
 		<br>
-		<input type="email" name="email" required placeholder="E-mail" value="<?= persistirDato($arrayDeErrores,'email');?>">>		
+		<input type="email" name="email" required placeholder="E-mail" value="<?= persistirDato($arrayDeErrores,'email');?>">	
 		<br>
 		<br>
 		<input type="password" name="password" required placeholder="Contraseña">
