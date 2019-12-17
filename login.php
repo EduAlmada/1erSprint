@@ -35,16 +35,14 @@
                     <input type="password" class="form-control" placeholder="Contraseña" name="password">
 
             </div>
-            <button class="btn btn-primary" type="submit">Ingresar</button> <!-- btn=bootstrap -->
+            <button class="btn btn-primary col-12" type="submit">Ingresar</button> <!-- btn=bootstrap -->
 
-        </form>
-        <div class="col-12 forgot">
+            <div class="col-12 forgot">
             <a href="#">Recordar contraseña</a> <!-- # para decirle que nos nos redirija para otro lado -->
 
         </div>
-
-
         </form>
+        
             </div>
 </div>
 </div>
