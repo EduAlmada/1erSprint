@@ -22,9 +22,12 @@
             <li class="nav-item">
                 <a class="nav-link" href="index.php" target="_self">Sobre Nosotros</a>
             </li>
-            <li class="nav-item">
+
+           <!-- Se saca perfil.php para que aparezca cuando se haga click en el usuario,
+           a su vez USUARIO LOGUEADO  aparecerá en la deracha del NAV -->
+           <!-- <li class="nav-item">
                     <a class="nav-link" href="perfil.php" target="_self">Perfil</a>
-            </li>
+            </li> -->
             <li class="nav-item">
                 <a class="nav-link" href="faq.php" target="_self">Preguntas frecuentes</a>
             </li>
@@ -49,9 +52,10 @@
         <ul class="navbar-nav nav-flex-icons">
             <li class="nav-item">
                 <a class="nav-link"  href="vistaCarritoCompras.php">
-                <span class="badge red z-depth-1 mr-1">1</span>
+                
                 <i class="fas fa-shopping-cart" ></i>
                 <span class="clearfix d-none d-sm-inline-block"> Carrito </span>
+                <span class="badge red z-depth-1 mr-1">1</span>
                 </a>
             </li>
             <li class="nav-item">
@@ -67,6 +71,27 @@
             <li class="nav-item">
                 <a href="https://www.instagram.com" class="nav-link" target="_blank">
                 <i class="fab fa-instagram"></i>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link"  href="<?php
+                if(isset($_SESSION['nombreLogueado'])){
+                   echo "perfil.php";
+                }
+                else {echo "login.php";}
+
+                ?>">
+                <span class="clearfix d-none d-sm-inline-block">
+                <?php  
+                
+                if(isset($_SESSION['nombreLogueado'])){
+                    $nombreLogueadoSession=$_SESSION['nombreLogueado'];
+                    echo  $nombreLogueadoSession;
+                }
+               else {  echo"Invitado"; }
+            
+                ?></span>
                 </a>
             </li>
         </ul>
