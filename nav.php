@@ -28,12 +28,19 @@
             <li class="nav-item">
                 <a class="nav-link" href="faq.php" target="_self">Preguntas frecuentes</a>
             </li>
+            <?php if(!isset($SESSION['email'])): ?>
             <li class="nav-item">
                 <a class="nav-link" href="registro.php" target="_self">Registrarse</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="login.php" target="_self">Login</a>
             </li>
+            <?php endif; ?>
+            <?php if(isset($SESSION['email'])): ?>
+            <li class="nav-item">
+                <a class="nav-link" href="logout.php" target="_self">Log Out</a>
+            </li>
+            <?php endif; ?>
             <li class="nav-item">
                 <a class="nav-link" href="formularioContacto.php" target="_self">Contacto</a>
             </li>
