@@ -29,7 +29,7 @@ function validarNombre(){ /*Inicio de funcion validarNombre */
       elseif(strlen($_POST["nombre"])<2){
        return "El nombre de usuario debe contener al menos 2 letras";
       }
-      elseif(empty($_POST["nombre"]) || $_POST["nombre"]===" ") {
+      elseif(empty($_POST["nombre"])) {
         return "Ingrese algún nombre de usuario";
       }
       else{

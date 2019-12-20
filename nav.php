@@ -36,12 +36,12 @@
                 <a class="nav-link" href="registro.php" target="_self">Registrarse</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="login.php" target="_self">Login</a>
+                <a class="nav-link" href="controladores/verificarIngresoLogin.php" target="_self">Login</a>
             </li>
             <?php endif; ?>
             <?php if(isset($SESSION['email'])): ?>
             <li class="nav-item">
-                <a class="nav-link" href="logout.php" target="_self">Log Out</a>
+                <a class="nav-link" href="logout.php" target="_self">LogOut</a>
             </li>
             <?php endif; ?>
             <li class="nav-item">
@@ -83,7 +83,7 @@
                 }
                 else {echo "login.php";}
 
-                ?>">
+                ?>" target="_self">
                 <span class="clearfix d-none d-sm-inline-block">
                 <?php  
                 
@@ -91,14 +91,14 @@
                     $nombreLogueadoSession=$_SESSION['usuario'];
                     echo  $nombreLogueadoSession;
                 }
-               else {  echo"Invitado"; }
+               else {  echo "Invitado"; }
             
                 ?></span>
                 </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link"  href="controladores/logout.php?>">
+                <a class="nav-link"  href="controladores/logout.php?>" target="_self">
                 <span class="clearfix d-none d-sm-inline-block">
                 Cerrar sesión</span>
                 </a>

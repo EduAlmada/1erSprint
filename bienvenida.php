@@ -1,4 +1,12 @@
-<?php  session_start(); 
+<?php 
+
+//
+
+$usuarioLogueado=$_GET['usuario'];
+
+session_start();
+$_SESSION['usuario']=$usuarioLogueado;
+
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -15,7 +23,7 @@
   Bienvenida/o <?php echo $_SESSION["usuario"];  ?>
 </div>
 
-<?php include("footer.php") ?>
+<?php include("footer.php")?>
 <?php include("scripts.php")?>    
 </body>
 </html>
