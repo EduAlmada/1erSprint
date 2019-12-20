@@ -5,9 +5,6 @@ $passwordValidado=validarPassword();
   
 function ingresarLogin($nombreValidado,$passwordValidado){
     
-  
-
-
     $usuariosGet=file_get_contents("usuarios.json");//Leemos los usuarios registrados
     $usuariosDecode=json_decode($usuariosGet,true);
    // $encontrado=FALSE;

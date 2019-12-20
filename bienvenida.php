@@ -20,7 +20,7 @@ $_SESSION['usuario']=$usuarioLogueado;
 <br>
 <br>
 <div class="alert alert-success" role="alert">
-  Bienvenida/o <?php echo $_SESSION["usuario"];  ?>
+  Bienvenida/o <?php echo $_SESSION["usuario"]; ?>
 </div>
 
 <?php include("footer.php")?>

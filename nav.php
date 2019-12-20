@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!-- Navbar, fixed-top-->
 <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
     <div class="container">
