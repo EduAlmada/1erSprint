@@ -14,33 +14,31 @@ Fecha: 30/11/2019
   - Que no este vacio
 ######################*/
 
-function validarNombre($nombre){ /*Inicio de funcion validarNombre */
-    $nombre=$_POST["nombre"];
 
-  if($_POST){
+function validarNombre(){ /*Inicio de funcion validarNombre */
+   
 
-      if(preg_match("[\W]",$nombre)){ //Negación de los alfanúmericos [\W]
+  if(isset($_POST["nombre"])){
+
+      if(preg_match("[\W]",$_POST["nombre"])){ //Negación de los alfanúmericos [\W]
         return "Ingrese usuario alfanumerico sin simbolos ni espacios";
       }  
-      elseif(trim($nombre,"\0")==' '){
+      elseif(trim($_POST["nombre"],"\0")==' '){
         return "Nombre de usuario no debe contener espacios";
       }
-      elseif(strlen($nombre)<2){
+      elseif(strlen($_POST["nombre"])<2){
        return "El nombre de usuario debe contener al menos 2 letras";
       }
-      elseif(empty($nombre) || $nombre===" ") {
+      elseif(empty($_POST["nombre"]) || $_POST["nombre"]===" ") {
         return "Ingrese algún nombre de usuario";
       }
       else{
            
-          $nombreTrimeado=trim($nombre);
-          return "Nombre correcto:".$nombreTrimeado;
+          $nombreTrimeado=trim($_POST["nombre"]);
+          return $nombreTrimeado;
       } 
  }
 } /*Fin de funcion validarNombre */
-$respuestaValidarNombre=validarNombre($_POST);
-echo $respuestaValidarNombre;
-echo "<br>";
 
 
 /* ####################### 
@@ -53,35 +51,34 @@ Validación de Password
 - Que tenga al menos un carácter numérico
 ########################## */
 
-function validarPassword($password){ /*Inicio de funcion validarPassword */
-    $password=$_POST["password"];
+function validarPassword(){ /*Inicio de funcion validarPassword */
+   
 
-    if($_POST){
+    if(isset($_POST["password"])){
             
-             if( (strlen($password)==0) ){
+             if( (strlen($_POST["password"])==0) ){
                return "La contraseña esta vacia";
              }
-           elseif(strlen($password)<6){
+           elseif(strlen($_POST["password"])<6){
                 return "La contraseña debe ser mayor igual 6 carácteres alfanuméricos";
              }
-             elseif( (!preg_match('`[a-z]`',$password))  ){
+             elseif( (!preg_match('`[a-z]`',$_POST["password"]))  ){
                  return "La contraseña debe tener al menos una letra minúscula";
              }
-             elseif( (!preg_match('`[A-Z]`',$password))  ){
+             elseif( (!preg_match('`[A-Z]`',$_POST["password"]))  ){
                 return "La clave debe tener al menos una letra mayúscula";
             }
-            elseif( (!preg_match('`[0-9]`',$password)) ){
+            elseif( (!preg_match('`[0-9]`',$_POST["password"])) ){
                 return "La clave debe tener al menos un caracter numérico";
                
              } 
             else{
-                return "Correcto: ".$password;
+                return $_POST["password"];
                 }
             } 
      } /*Fin de funcion validarPassword */
 
-    $respuestaValidarPassword=validarPassword($_POST);
-    echo $respuestaValidarPassword;
-
+  
+   
 
     ?>

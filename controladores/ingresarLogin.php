@@ -1,8 +1,8 @@
 <?php 
 
-$nombreValidado=validarNombre($nombre);
-$passwordValidado=validarPassword($password);
-
+  $nombreValidado=validarNombre();
+  $passwordValidado=validarPassword();
+  
 function ingresarLogin($nombreValidado,$passwordValidado){
     
     $usuariosGet=file_get_contents("usuarios.json");
@@ -10,20 +10,17 @@ function ingresarLogin($nombreValidado,$passwordValidado){
     $encontrado=FALSE;
     $usuarioLogueado="";
     $passwordVerificado=FALSE;
-     var_dump($usuariosDecode);
+    // var_dump($usuariosDecode);
 
     
-
     foreach($usuariosDecode as $usuario){
-
         $passwordAprobado=password_verify($passwordValidado,$usuario['password']);
         if($nombreValidado==$usuario['nombre'] && $passwordAprobado==TRUE){
-
             $encontrado=TRUE;
             $usuarioLogueado=$usuario['nombre'];
            }
         else{
-           $encontrado=FALSE;
+            $encontrado=FALSE;
         }
     }
 
@@ -31,22 +28,19 @@ function ingresarLogin($nombreValidado,$passwordValidado){
     
     if($encontrado==TRUE)
     {
-       
-        
+       session_start();
+       $_SESSION['usuario']=$usuarioLogueado;
        // $ruta=realpath('../bienvenida.php');
-        //header("Location: bienvenida.php");
-        header("Location: bienvenida.php?usuario=$usuarioLogueado");
+       header("Location:bienvenida.php");
+        //header("Location:bienvenida.php?usuario=$usuarioLogueado");
          
       //  echo 'Usuario Login correcto'.$usuario['nombre'];
     }
     else{
         //$ruta=realpath('../login.php');
-        header("Location: login.php");
-        
+        //header("Location:login.php");
+        }
     }
-
-
-}
 
 ingresarLogin($nombreValidado,$passwordValidado);
 

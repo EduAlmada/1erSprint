@@ -1,5 +1,11 @@
+<?php
+include_once("controladores/validacionLogin.php");
+include_once("controladores/ingresarLogin.php");
+
+
+?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 <?php include("head.php") ?>
     <link rel="stylesheet" href="css/login.css">
@@ -21,7 +27,7 @@
                     <img src="img/AVATAR.png">
         </div>
         <!--Fecha:30/11/2019 Agregado por rodrigo: Se agregó el atributo "action" y "method" a la etiqueta "form"  -->
-        <form class="col-12" action="controladores/validacionLogin.php" method="POST"> <!-- Que utilice todo el espacio disponible -->
+        <form class="col-12" action="" method="POST"> <!-- Que utilice todo el espacio disponible -->
 
             <div class="form-group" id="user-group"> <!-- Puse el nombre user group para el css -->
 

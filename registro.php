@@ -15,7 +15,7 @@
 <?php 
 $arrayDeErrores = "";
 if($_POST) {
-    $arrayDeErrores = validarRegistracion($_POST);//esta funcion deberia devolver los errores encontrados .
+  //  $arrayDeErrores = validarRegistracion($_POST);//esta funcion deberia devolver los errores encontrados .
 }
 	?>
 
@@ -26,11 +26,11 @@ if($_POST) {
 		<br>
 		<label>INFORMACIÓN DE USUARIO</label>
 		<br>
-		<input type="text" name="nombre" required placeholder="Nombre De Usuario" value="<?= persistirDato($arrayDeErrores,'nombre');?>">
+	   <input type="text" name="nombre" required placeholder="Nombre De Usuario" > <!-- value  //persistirDato($arrayDeErrores,'nombre');?> -->
 		<br>
 		<label>INFORMACIÓN DE INICIO DE SESIÓN</label>	
 		<br>
-		<input type="email" name="email" required placeholder="E-mail" value="<?= persistirDato($arrayDeErrores,'email');?>">	
+		<input type="email" name="email" required placeholder="E-mail" >	<!-- value   //persistirDato($arrayDeErrores,'email');?> -->
 		<br>
 		<br>
 		<input type="password" name="password" required placeholder="Contraseña">

@@ -114,7 +114,7 @@ function validarPassword(){ /*Inicio de funcion validarPassword */
      } /*Fin de funcion validarPassword */
 
 
-    function persistirDato($arrayE, $campo) {
+  /*  function persistirDato($arrayE, $campo) {
       if( isset($arrayE[$campo]) ) {
           return "";
       } else {
@@ -122,5 +122,6 @@ function validarPassword(){ /*Inicio de funcion validarPassword */
               return $_POST[$campo];
           }
       }
-  }
+  }*/
+
 ?>
